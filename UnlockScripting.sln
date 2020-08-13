@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+# SharpDevelop 5.1
+VisualStudioVersion = 12.0.20827.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnlockScripting", "UnlockScripting\UnlockScripting.csproj", "{168F200B-CC00-43A0-AC6B-FE91B325A8A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logging", "Logging", "{ABCE97D1-F4B7-4F2E-B501-B4CF5E1214BA}"
+	ProjectSection(SolutionItems) = preProject
+		Logging\bds配置说明.txt = Logging\bds配置说明.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "behavior_packs", "behavior_packs", "{07B24AD9-6437-438A-A809-C373BF637C87}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logging", "Logging", "{9EA58ED5-15E2-45D0-A8E6-E22B7775DE10}"
+	ProjectSection(SolutionItems) = preProject
+		Logging\behavior_packs\Logging\manifest.json = Logging\behavior_packs\Logging\manifest.json
+		Logging\behavior_packs\Logging\pack_icon.png = Logging\behavior_packs\Logging\pack_icon.png
+		Logging\behavior_packs\Logging\readme.txt = Logging\behavior_packs\Logging\readme.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{45FFF790-60E9-483C-AA2F-940BF99B8029}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "client", "client", "{896EAA0F-600C-4A2D-99E0-15D50F9A1427}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "server", "server", "{9AF6308B-5D03-4405-97A8-71C8CE251D05}"
+	ProjectSection(SolutionItems) = preProject
+		Logging\behavior_packs\Logging\scripts\server\Logging.js = Logging\behavior_packs\Logging\scripts\server\Logging.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "worlds", "worlds", "{30C2919F-2772-42D2-B67D-508D6AE708E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bedrock level", "Bedrock level", "{6E82A2F3-3A83-459A-9FFB-44650D9BD5CE}"
+	ProjectSection(SolutionItems) = preProject
+		Logging\worlds\Bedrock level\world_behavior_packs.json = Logging\worlds\Bedrock level\world_behavior_packs.json
+		Logging\worlds\Bedrock level\world_resource_packs.json = Logging\worlds\Bedrock level\world_resource_packs.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{168F200B-CC00-43A0-AC6B-FE91B325A8A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{168F200B-CC00-43A0-AC6B-FE91B325A8A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{168F200B-CC00-43A0-AC6B-FE91B325A8A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{168F200B-CC00-43A0-AC6B-FE91B325A8A0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{07B24AD9-6437-438A-A809-C373BF637C87} = {ABCE97D1-F4B7-4F2E-B501-B4CF5E1214BA}
+		{9EA58ED5-15E2-45D0-A8E6-E22B7775DE10} = {07B24AD9-6437-438A-A809-C373BF637C87}
+		{45FFF790-60E9-483C-AA2F-940BF99B8029} = {9EA58ED5-15E2-45D0-A8E6-E22B7775DE10}
+		{896EAA0F-600C-4A2D-99E0-15D50F9A1427} = {45FFF790-60E9-483C-AA2F-940BF99B8029}
+		{9AF6308B-5D03-4405-97A8-71C8CE251D05} = {45FFF790-60E9-483C-AA2F-940BF99B8029}
+		{30C2919F-2772-42D2-B67D-508D6AE708E0} = {ABCE97D1-F4B7-4F2E-B501-B4CF5E1214BA}
+		{6E82A2F3-3A83-459A-9FFB-44650D9BD5CE} = {30C2919F-2772-42D2-B67D-508D6AE708E0}
+	EndGlobalSection
+EndGlobal

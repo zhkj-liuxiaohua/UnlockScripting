@@ -1,0 +1,12 @@
+行为包名称：Logging
+功能：行为日志记录演示
+
+欢迎使用行为日志记录脚本。这是一个server端addons脚本开发示例。演示了如何用addons脚本进行行为日志记录。如何配置？
+
+1、行为包放入bds所在目录的 behavior_packs 文件夹内；
+2、资源需求文件 world_behavior_packs.json 放入 worlds\你的世界 地图文件夹内（注意：你的世界 地图需开启 实验模式）；
+3、在 server.properties 设置 content-log-file-enabled=true 启用log文件；
+4、需要查找log时，定位至目录 %AppData%\..\Roaming\Minecraft.Server\logs 翻阅log文件即可。
+
+如何自定义你的行为包？
+在线生成uuid，然后配置行为包内的 manifest.json ，保持 地图资源需求文件 和 行为包 的uuid一致即可应用。

@@ -1,0 +1,18 @@
+{
+    "format_version": 1,
+    "header": {
+        "description": "基于addons的行为日志记录，限server端使用。使用前，请注意阅读说明。",
+        "name": "Logging 日志记录",
+        "uuid": "b3619f91-7d3c-4834-b6a9-17221c51069e",
+        "version": [0, 0, 2],
+        "min_engine_version": [1, 2, 6]
+    },
+    "modules": [
+    {
+        "description": "Logging Script",
+        "type": "data",
+        "uuid": "45c06260-b1aa-4914-94fa-ed2362a59cf1",
+        "version": [0, 0, 1]
+    }
+    ]
+}
