@@ -91,24 +91,21 @@ function runcmd(c) {
 }
 
 // 取维度
-function getDimension(e) {
-    // TODO 暂无法实现
-    return "";
-    /*
-    let n = system.getComponent(e, "minecraft:environment_sensor");
-    return JSON.stringify(n);
-    
-    let n = system.getComponent(e, ETAG.TickWorld);
-    let t = n.data.ticking_area;
-    let bpos = {};
-    let v3 = getVec3(e);
-    bpos.x = parseInt(v3.x);
-    bpos.y = parseInt(v3.y);
-    bpos.z = parseInt(v3.z);
-    let b = system.getBlock(t, bpos);
-    let bs = system.getComponent(b, "minecraft:blockstate");
-    return JSON.stringify(bs);
-    */
+function getDimension(targetEntity) {
+    var _a, _b, _c, _d;
+    const tickarea = (_a = system.getComponent(targetEntity, "minecraft:tick_world" /* TickWorld */)) === null || _a === void 0 ? void 0 : _a.data.ticking_area;
+    const position = (_b = system.getComponent(targetEntity, "minecraft:position" /* Position */)) === null || _b === void 0 ? void 0 : _b.data;
+    const x = position === null || position === void 0 ? void 0 : position.x, z = position === null || position === void 0 ? void 0 : position.z;
+    if (tickarea === undefined || x === undefined || z == undefined)
+        return null;
+    const bottom_bedrock = ((_c = system.getBlock(tickarea, x, 0, z)) === null || _c === void 0 ? void 0 : _c.__identifier__) == "minecraft:bedrock";
+    const top_bedrock = ((_d = system.getBlock(tickarea, x, 127, z)) === null || _d === void 0 ? void 0 : _d.__identifier__) == "minecraft:bedrock";
+    if (bottom_bedrock && top_bedrock)
+        return "地狱";
+    else if (bottom_bedrock)
+        return "主世界";
+    else
+        return "末地";
 }
 
 // 取实体名称
