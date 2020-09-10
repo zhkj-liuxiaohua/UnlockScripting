@@ -66,6 +66,8 @@ namespace UnlockScripting
 			// 初始化RVA，或可远程获取
 			var a1 = new ArrayList(new int[] { 0x00A7F9C0, 0x004CD7D0, 0x0042D250 });
 			RVAs["1.16.20.3"] = a1;
+			var a2 = new ArrayList(new int[]{0x00A7D660, 0x004CD7E0, 0x0042D260});
+			RVAs["1.16.40.2"] = a2;
 			try {
 				ArrayList rval = null;
 				if (RVAs.TryGetValue(api.VERSION, out rval)) {
