@@ -169,7 +169,7 @@ system.initialize = function () {
         let pev = getDimension(p);
         let bname = d.block_identifier;
         let bpos = d.block_position;
-        let str = "玩家 " + playername + pev + " 于 (" + parseInt(pvec3.x) + "," + parseInt(pvec3.y) + "," + parseInt(pvec3.z) + ") 位置 破坏 (" + bpos.x + "," + bpos.y + "," + bpos.z + ") 处的 " + bname + " 方块。";
+        let str = "玩家 " + playername + " 于 " + pev + " (" + parseInt(pvec3.x) + "," + parseInt(pvec3.y) + "," + parseInt(pvec3.z) + ") 位置 破坏 (" + bpos.x + "," + bpos.y + "," + bpos.z + ") 处的 " + bname + " 方块。";
         chat(str);
         log(str);
     });
@@ -183,7 +183,7 @@ system.initialize = function () {
         let pev = getDimension(p);
         let bpos = d.block_position;
         let bname = getBlockName(p, bpos);
-        let str = "玩家 " + playername + pev + " 于 (" + parseInt(pvec3.x) + "," + parseInt(pvec3.y) + "," + parseInt(pvec3.z) + ") 位置 放置 (" + bpos.x + "," + bpos.y + "," + bpos.z + ") 处的 " + bname + " 方块。";
+        let str = "玩家 " + playername + " 于 " + pev + " (" + parseInt(pvec3.x) + "," + parseInt(pvec3.y) + "," + parseInt(pvec3.z) + ") 位置 放置 (" + bpos.x + "," + bpos.y + "," + bpos.z + ") 处的 " + bname + " 方块。";
         chat(str);
         log(str);
     });
@@ -197,7 +197,7 @@ system.initialize = function () {
             let playername = getName(p);
             let pvec3 = getVec3(p);
             let pev = getDimension(p);
-            let str = "玩家 " + playername + pev + " 已于 (" + parseInt(pvec3.x) + "," + parseInt(pvec3.y) + "," + parseInt(pvec3.z) + ") 位置 重生。";
+            let str = "玩家 " + playername + " 已于 "+ pev + " (" + parseInt(pvec3.x) + "," + parseInt(pvec3.y) + "," + parseInt(pvec3.z) + ") 位置 重生。";
             chat(str);
             log(str);
         }
@@ -211,7 +211,7 @@ system.initialize = function () {
         if (actname != null && actname != "") {     // 命名实体死亡
             let pvec3 = getVec3(act);
             let pev = getDimension(act);
-            let str = actname + pev + " 在 (" + parseInt(pvec3.x) + "," + parseInt(pvec3.y) + "," + parseInt(pvec3.z) + ") 位置 被杀死了。";
+            let str = actname + " 在 " + pev + " (" + parseInt(pvec3.x) + "," + parseInt(pvec3.y) + "," + parseInt(pvec3.z) + ") 位置 被杀死了。";
             chat(str);
             log(str);
         }
@@ -228,7 +228,7 @@ system.initialize = function () {
             let pev = getDimension(p);
             let umet = d.use_method;
             let itemname = d.item_stack.item;
-            let str = "玩家 " + playername + pev + " 于 (" + parseInt(pvec3.x) + "," + parseInt(pvec3.y) + "," + parseInt(pvec3.z) + ") 位置 用 " + umet + " 方式 使用了 " + itemname + " 物品。";
+            let str = "玩家 " + playername + " 于 " + pev + " (" + parseInt(pvec3.x) + "," + parseInt(pvec3.y) + "," + parseInt(pvec3.z) + ") 位置 用 " + umet + " 方式 使用了 " + itemname + " 物品。";
             chat(str);
             log(str);
         }
@@ -246,7 +246,7 @@ system.initialize = function () {
             let amet = d.acquisition_method;
             let itemname = d.item_stack.item;
             let count = d.acquired_amount;
-            let str = "玩家 " + playername + pev + " 于 (" + parseInt(pvec3.x) + "," + parseInt(pvec3.y) + "," + parseInt(pvec3.z) + ") 位置 用 " + amet + " 方式 获取了 " + count + " 个 " + itemname + " 物品。";
+            let str = "玩家 " + playername + " 于 " + pev + " (" + parseInt(pvec3.x) + "," + parseInt(pvec3.y) + "," + parseInt(pvec3.z) + ") 位置 用 " + amet + " 方式 获取了 " + count + " 个 " + itemname + " 物品。";
             chat(str);
             log(str);
         }
@@ -263,7 +263,7 @@ system.initialize = function () {
             let pev = getDimension(p);
             let itemname = d.item_stack.item;
             let count = d.item_stack.count;
-            let str = "玩家 " + playername + pev + " 于 (" + parseInt(pvec3.x) + "," + parseInt(pvec3.y) + "," + parseInt(pvec3.z) + ") 位置 掉落了 " + count + " 个 " + itemname + " 物品。";
+            let str = "玩家 " + playername + " 于 " + pev + " (" + parseInt(pvec3.x) + "," + parseInt(pvec3.y) + "," + parseInt(pvec3.z) + ") 位置 掉落了 " + count + " 个 " + itemname + " 物品。";
             chat(str);
             log(str);
         }
@@ -280,7 +280,7 @@ system.initialize = function () {
             let pev = getDimension(p);
             let itemname = d.item_stack.item;
             let slot = d.slot;
-            let str = "玩家 " + playername + pev + " 于 (" + parseInt(pvec3.x) + "," + parseInt(pvec3.y) + "," + parseInt(pvec3.z) + ") 位置 切换装备 " + itemname + " 至 " + slot + " 栏。";
+            let str = "玩家 " + playername + " 于 " + pev + " (" + parseInt(pvec3.x) + "," + parseInt(pvec3.y) + "," + parseInt(pvec3.z) + ") 位置 切换装备 " + itemname + " 至 " + slot + " 栏。";
             chat(str);
             log(str);
         }
@@ -295,7 +295,7 @@ system.initialize = function () {
         let pvec3 = getVec3(p);
         let pev = getDimension(p);
         let bname = getBlockName(p, bpos);
-        let str = "玩家 " + playername + pev + " 于 (" + parseInt(pvec3.x) + "," + parseInt(pvec3.y) + "," + parseInt(pvec3.z) + ") 位置 开启 (" + bpos.x + "," + bpos.y + "," + bpos.z + ") 处的 " + bname + " 方块。";;
+        let str = "玩家 " + playername + " 于 " + pev + " (" + parseInt(pvec3.x) + "," + parseInt(pvec3.y) + "," + parseInt(pvec3.z) + ") 位置 开启 (" + bpos.x + "," + bpos.y + "," + bpos.z + ") 处的 " + bname + " 方块。";;
         chat(str);
         log(str);
     });
