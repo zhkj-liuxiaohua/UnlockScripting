@@ -66,6 +66,7 @@ namespace UnlockScripting
 			// 高版本，函数被优化，使用汇编机器码方式直接改写源程序机器码
 			switch(api.VERSION) {
 				case "1.16.100.4":
+				case "1.16.101.1":
 					{
 						//byte[] orgdata = {0xF6, 0x00, 0x04, 0x0F, 0x84, 0x47, 0x01, 0x00, 0x00};	// IDA test XX, jz XX
 						//byte[] loaded = api.readHardMemory(0x0AC36F9, 9);
