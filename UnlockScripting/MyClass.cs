@@ -85,6 +85,18 @@ namespace UnlockScripting
 						}
 					}
 					break;
+				case "1.16.200.2":
+					{
+						byte[] jmp_explaycheckcode = { 0xeb, 0x07, 0, 0, 0, 0, 0, 0, 0 };
+						if (api.writeHardMemory(0x0CB1379, jmp_explaycheckcode, 9)) {
+							const int symregcmd = 0x00C0D650;
+							if (api.cshook((int)symregcmd,
+							               Marshal.GetFunctionPointerForDelegate(cmdnocheat), out cregorg)) {
+								Console.WriteLine("[UnlockScripting] Addons脚本引擎+作弊指令已强开。");
+							}
+						}
+					}
+					break;
 			}
 			
 			// 初始化RVA，或可远程获取，早期版本
