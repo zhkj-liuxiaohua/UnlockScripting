@@ -61,6 +61,13 @@ namespace UnlockScripting
 			mapi.csunhook(Marshal.GetFunctionPointerForDelegate(explay), ref exorg);
 		}
 		
+		static void nocheat(int rva) {
+			if(mapi.cshook((int)rva,
+			               Marshal.GetFunctionPointerForDelegate(cmdnocheat), out cregorg)) {
+				Console.WriteLine("[UnlockScripting] Addons脚本引擎+作弊指令已强开。");
+			}
+		}
+		
 		public static void init(MCCSAPI api) {
 			mapi = api;
 			// 高版本，函数被优化，使用汇编机器码方式直接改写源程序机器码
@@ -77,23 +84,18 @@ namespace UnlockScripting
 						byte[] jmp_explaycheckcode = { 0xeb, 0x07, 0, 0, 0, 0, 0, 0, 0 };	// IDA jmp short + 7, hex data
 						if (api.writeHardMemory(0x0AC36F9, jmp_explaycheckcode, 9)) {		// IDA MinecraftServerScriptEngine::onServerThreadStarted + 0x69
 							// JS 引擎对实验性玩法的验证通过汇编码跳过
-							const int symregcmd = 0x00A1E8E0;
-							if (api.cshook((int)symregcmd,	// IDA CommandRegistry::registerCommand
-							               Marshal.GetFunctionPointerForDelegate(cmdnocheat), out cregorg)) {
-								Console.WriteLine("[UnlockScripting] Addons脚本引擎+作弊指令已强开。");
-							}
+							const int symregcmd = 0x00A1E8E0;	// IDA CommandRegistry::registerCommand
+							nocheat(symregcmd);
 						}
 					}
 					break;
 				case "1.16.200.2":
+				case "1.16.201.2":
 					{
 						byte[] jmp_explaycheckcode = { 0xeb, 0x07, 0, 0, 0, 0, 0, 0, 0 };
 						if (api.writeHardMemory(0x0CB1379, jmp_explaycheckcode, 9)) {
 							const int symregcmd = 0x00C0D650;
-							if (api.cshook((int)symregcmd,
-							               Marshal.GetFunctionPointerForDelegate(cmdnocheat), out cregorg)) {
-								Console.WriteLine("[UnlockScripting] Addons脚本引擎+作弊指令已强开。");
-							}
+							nocheat(symregcmd);
 						}
 					}
 					break;
