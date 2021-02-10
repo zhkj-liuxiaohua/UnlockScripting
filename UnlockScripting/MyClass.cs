@@ -91,6 +91,7 @@ namespace UnlockScripting
 					break;
 				case "1.16.200.2":
 				case "1.16.201.2":
+				case "1.16.201.3":
 					{
 						byte[] jmp_explaycheckcode = { 0xeb, 0x07, 0, 0, 0, 0, 0, 0, 0 };
 						if (api.writeHardMemory(0x0CB1379, jmp_explaycheckcode, 9)) {
