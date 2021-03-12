@@ -100,6 +100,15 @@ namespace UnlockScripting
 						}
 					}
 					break;
+				case "1.16.210.05":
+					{
+						byte[] jmp_explaycheckcode = { 0xeb, 0x06, 0, 0, 0, 0, 0, 0};
+						if (api.writeHardMemory(0x0B325C1, jmp_explaycheckcode, 8)) {
+							const int symregcmd = 0x00612040;
+							nocheat(symregcmd);
+						}
+					}
+					break;
 			}
 			
 			// 初始化RVA，或可远程获取，早期版本
