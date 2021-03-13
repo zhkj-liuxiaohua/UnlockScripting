@@ -101,10 +101,14 @@ namespace UnlockScripting
 					}
 					break;
 				case "1.16.210.05":
+				case "1.16.210.06":
 					{
+						bool older = (api.VERSION == "1.16.210.05");
+						int rva =  older ? 0x0B325C1 : 0x00B21710+0x61;
+						int rva2 = older ? 0x00612040 : 0x006112B0;
 						byte[] jmp_explaycheckcode = { 0xeb, 0x06, 0, 0, 0, 0, 0, 0};
-						if (api.writeHardMemory(0x0B325C1, jmp_explaycheckcode, 8)) {
-							const int symregcmd = 0x00612040;
+						if (api.writeHardMemory(rva, jmp_explaycheckcode, 8)) {
+							int symregcmd = rva2;
 							nocheat(symregcmd);
 						}
 					}
