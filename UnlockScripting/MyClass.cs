@@ -102,13 +102,19 @@ namespace UnlockScripting
 					break;
 				case "1.16.210.05":
 				case "1.16.210.06":
+				case "1.16.220.02":
 					{
-						bool older = (api.VERSION == "1.16.210.05");
-						int rva =  older ? 0x0B325C1 : 0x00B21710+0x61;
-						int rva2 = older ? 0x00612040 : 0x006112B0;
+						Hashtable rva = new Hashtable();
+						rva["1.16.210.05"] = 0x0B325C1;
+						rva["1.16.210.06"] = 0x00B21710+0x61;
+						rva["1.16.220.02"] = 0x00BF6090+0x61;
+						Hashtable rva2 = new Hashtable();
+						rva2["1.16.210.05"] = 0x00612040;
+						rva2["1.16.210.06"] = 0x006112B0;
+						rva2["1.16.220.02"] = 0x00683AC0;
 						byte[] jmp_explaycheckcode = { 0xeb, 0x06, 0, 0, 0, 0, 0, 0};
-						if (api.writeHardMemory(rva, jmp_explaycheckcode, 8)) {
-							int symregcmd = rva2;
+						if (api.writeHardMemory((int)rva[api.VERSION], jmp_explaycheckcode, 8)) {
+							int symregcmd = (int)rva2[api.VERSION];
 							nocheat(symregcmd);
 						}
 					}
