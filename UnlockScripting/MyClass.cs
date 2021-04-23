@@ -103,15 +103,18 @@ namespace UnlockScripting
 				case "1.16.210.05":
 				case "1.16.210.06":
 				case "1.16.220.02":
+				case "1.16.221.01":
 					{
 						Hashtable rva = new Hashtable();
 						rva["1.16.210.05"] = 0x0B325C1;
 						rva["1.16.210.06"] = 0x00B21710+0x61;
 						rva["1.16.220.02"] = 0x00BF6090+0x61;
+						rva["1.16.221.01"] = 0x00BF6220+0x61;
 						Hashtable rva2 = new Hashtable();
 						rva2["1.16.210.05"] = 0x00612040;
 						rva2["1.16.210.06"] = 0x006112B0;
 						rva2["1.16.220.02"] = 0x00683AC0;
+						rva2["1.16.221.01"] = 0x00683A90;
 						byte[] jmp_explaycheckcode = { 0xeb, 0x06, 0, 0, 0, 0, 0, 0};
 						if (api.writeHardMemory((int)rva[api.VERSION], jmp_explaycheckcode, 8)) {
 							int symregcmd = (int)rva2[api.VERSION];
