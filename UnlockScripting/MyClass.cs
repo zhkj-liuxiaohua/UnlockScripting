@@ -104,20 +104,32 @@ namespace UnlockScripting
 				case "1.16.210.06":
 				case "1.16.220.02":
 				case "1.16.221.01":
+				case "1.17.0.03":
+				case "1.17.1.01":
+				case "1.17.2.01":
+				case "1.17.10.04":
 					{
-						Hashtable rva = new Hashtable();
-						rva["1.16.210.05"] = 0x0B325C1;
-						rva["1.16.210.06"] = 0x00B21710+0x61;
-						rva["1.16.220.02"] = 0x00BF6090+0x61;
-						rva["1.16.221.01"] = 0x00BF6220+0x61;
-						Hashtable rva2 = new Hashtable();
-						rva2["1.16.210.05"] = 0x00612040;
-						rva2["1.16.210.06"] = 0x006112B0;
-						rva2["1.16.220.02"] = 0x00683AC0;
-						rva2["1.16.221.01"] = 0x00683A90;
+						Hashtable rva_sestart = new Hashtable();
+						rva_sestart["1.16.210.05"] = 0x0B325C1;
+						rva_sestart["1.16.210.06"] = 0x00B21710+0x61;
+						rva_sestart["1.16.220.02"] = 0x00BF6090+0x61;
+						rva_sestart["1.16.221.01"] = 0x00BF6220+0x61;
+						rva_sestart["1.17.0.03"] = 0x00E59380+0x61;
+						rva_sestart["1.17.1.01"] = 0x00E58E20+0x61;
+						rva_sestart["1.17.2.01"] = 0x00E58E60+0x61;
+						rva_sestart["1.17.10.04"] = 0x00E4A030+0x61;
+						Hashtable rva_regcmd = new Hashtable();
+						rva_regcmd["1.16.210.05"] = 0x00612040;
+						rva_regcmd["1.16.210.06"] = 0x006112B0;
+						rva_regcmd["1.16.220.02"] = 0x00683AC0;
+						rva_regcmd["1.16.221.01"] = 0x00683A90;
+						rva_regcmd["1.17.0.03"] = 0x0075F9F0;
+						rva_regcmd["1.17.1.01"] = 0x0075F610;
+						rva_regcmd["1.17.2.01"] = 0x0075F620;
+						rva_regcmd["1.17.10.04"] = 0x00793530;
 						byte[] jmp_explaycheckcode = { 0xeb, 0x06, 0, 0, 0, 0, 0, 0};
-						if (api.writeHardMemory((int)rva[api.VERSION], jmp_explaycheckcode, 8)) {
-							int symregcmd = (int)rva2[api.VERSION];
+						if (api.writeHardMemory((int)rva_sestart[api.VERSION], jmp_explaycheckcode, 8)) {
+							int symregcmd = (int)rva_regcmd[api.VERSION];
 							nocheat(symregcmd);
 						}
 					}
