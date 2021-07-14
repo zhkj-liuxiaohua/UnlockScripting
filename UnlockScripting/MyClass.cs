@@ -35,13 +35,13 @@ namespace UnlockScripting
 			return ret;
 		};
 		
-		delegate ulong CMD_REG_Func(ulong a1, ulong a2, ulong a3, byte level, byte f1, byte f2);
+		delegate ulong CMD_REG_Func(ulong a1, ulong a2, ulong a3, byte level, short f1, short f2);
 		private static IntPtr cregorg;
 		/// <summary>
 		/// 指令全无作弊 - 解锁
 		/// </summary>
 		static readonly CMD_REG_Func cmdnocheat = (a1, a2, a3, l, f1, f2) => {
-			f1 |= 0x40;
+			f1 |= 0x80;
 			var org = Marshal.GetDelegateForFunctionPointer<CMD_REG_Func>(cregorg);
 			return org(a1, a2, a3, l, f1, f2);
 		};
